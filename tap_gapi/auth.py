@@ -38,6 +38,6 @@ class gapiAuthenticator(OAuthAuthenticator):
         """
         return cls(
             stream=stream,
-            auth_endpoint="https://gapi-dev.auth.us-east-1.amazoncognito.com/oauth2/token",
-            oauth_scopes="business/taxonomy",
+            auth_endpoint= cls.config["access_token_url"],
+            oauth_scopes= cls.config["scope"],
         )
