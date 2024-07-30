@@ -59,12 +59,26 @@ class Tapgapi(Tap):
         Returns:
             A list of discovered streams.
         """
-        return [
-            streams.MarketsStream(self),
-            streams.CapabilitiesStream(self),
-            streams.SubcapabilitiesStream(self),
-            streams.GroupsStream(self),
-        ]
+        tap_scope = self.config["scope"]
+        if tap_scope == 'finance/coa':
+            selected_streams = [
+            streams.FinanceCOAOrganizationStream(self),
+            streams.FinanceCOAFunctionStream(self),
+            streams.FinanceCOACostCenterStream(self),
+            streams.FinanceCOALegalEntityStream(self),
+            streams.FinanceCOAGeographyStream(self),
+            ]
+        elif tap_scope == 'business/taxonomy':
+            selected_streams = [
+            streams.BusinessTaxonomyMarketsStream(self),
+            streams.BusinessTaxonomyCapabilitiesStream(self),
+            streams.BusinessTaxonomySubcapabilitiesStream(self),
+            streams.BusinessTaxonomyGroupsStream(self),
+            ]
+        else:
+            selected_streams = []
+
+        return selected_streams 
 
 
 if __name__ == "__main__":
