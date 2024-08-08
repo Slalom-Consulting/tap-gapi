@@ -100,7 +100,7 @@ class FinanceCOALegalEntityStream(gapiStream):
         th.Property(
             "legalEntityId",
             th.StringType,
-            description="The organizations's system ID",
+            description="The legal entity's system ID",
         ),
         th.Property("legalEntityContractName", th.StringType),
         th.Property("legalEntityParentId", th.StringType),
@@ -163,7 +163,7 @@ class BusinessTaxonomyMarketsStream(gapiStream):
         th.Property(
             "id",
             th.StringType,
-            description="The Markets's system ID",
+            description="The Market's system ID",
         ),
         th.Property(
             "abbreviation",
@@ -197,7 +197,7 @@ class BusinessTaxonomyCapabilitiesStream(gapiStream):
         th.Property(
             "id",
             th.StringType,
-            description="The Markets's system ID",
+            description="The Capability's system ID",
         ),
         th.Property(
             "name",
@@ -225,7 +225,7 @@ class BusinessTaxonomySubcapabilitiesStream(gapiStream):
         th.Property(
             "id",
             th.StringType,
-            description="The Markets's system ID",
+            description="The Subcapability's system ID",
         ),
         th.Property(
             "name",
@@ -253,7 +253,7 @@ class BusinessTaxonomyGroupsStream(gapiStream):
         th.Property(
             "id",
             th.StringType,
-            description="The Markets's system ID",
+            description="The group's system ID",
         ),
         th.Property(
             "name",
