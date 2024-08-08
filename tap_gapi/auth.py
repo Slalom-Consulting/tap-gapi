@@ -23,7 +23,7 @@ class gapiAuthenticator(OAuthAuthenticator):
             "client_secret": self.config["client_secret"],
             "grant_type": self.config["grant_type"],
             "access_token_url": self.config["access_token_url"],
-            "scope": "business/taxonomy",
+            "scope": self.config["scope"],
         }
 
     @classmethod
