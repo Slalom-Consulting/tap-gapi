@@ -6,6 +6,7 @@ import sys
 import typing as t
 
 from singer_sdk import typing as th  # JSON Schema typing helpers
+from singer_sdk.helpers.jsonpath import extract_jsonpath
 
 from tap_gapi.client import gapiStream
 
@@ -88,6 +89,16 @@ class FinanceCOAGeographyStream(gapiStream):
         th.Property("lastUpdateDate", th.StringType),
     ).to_dict()
 
+    def parse_response(self, response: requests.Response) -> Iterable[dict]:
+        """Parse the response and return an iterator of result records."""
+        records = extract_jsonpath(self.records_jsonpath, input=response.json())
+        
+        for record in records:
+            # Convert geographyId to string if it's an integer
+            if "geographyId" in record and record["geographyId"] is not None:
+                record["geographyId"] = str(record["geographyId"])
+            yield record
+
 class FinanceCOALegalEntityStream(gapiStream):
     """Define custom stream."""
 
@@ -146,6 +157,15 @@ class FinanceCOAOrganizationStream(gapiStream):
         th.Property("lastUpdateDate", th.StringType),
     ).to_dict()
 
+    def parse_response(self, response: requests.Response) -> Iterable[dict]:
+        """Parse the response and return an iterator of result records."""
+        records = extract_jsonpath(self.records_jsonpath, input=response.json())
+        
+        for record in records:
+            # Convert organizationId to string if it's not already
+            if "organizationId" in record and record["organizationId"] is not None:
+                record["organizationId"] = str(record["organizationId"])
+            yield record
 
 
 """
