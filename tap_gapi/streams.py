@@ -269,3 +269,141 @@ class BusinessTaxonomyGroupsStream(gapiStream):
         th.Property("modifiedOn", th.DateTimeType),
     ).to_dict()
 
+class BusinessTaxonomyTaxonomyTypesStream(gapiStream):
+    """Define custom stream."""
+
+    name = "taxonomy_types"
+    path = "/business/taxonomy/types"
+    primary_keys: t.ClassVar[list[str]] = ["enterpriseId"]
+    replication_key = None
+    schema = th.PropertiesList(
+        th.Property("enterpriseId", th.StringType),
+        th.Property("name", th.StringType),
+        th.Property("idPrefix", th.StringType),
+        th.Property("isActive", th.BooleanType),
+        th.Property("url", th.StringType),
+        th.Property("isWorkforceTaxonomy", th.BooleanType),
+        th.Property("levelMax", th.IntegerType),
+        th.Property("labelL1", th.StringType),
+        th.Property("labelL2", th.StringType),
+        th.Property("labelL3", th.StringType),
+        th.Property("labelL4", th.StringType),
+        th.Property("createdOn", th.DateTimeType),
+        th.Property("createdBy", th.StringType),
+        th.Property("modifiedOn", th.DateTimeType),
+        th.Property("modifiedBy", th.StringType),
+    ).to_dict()
+
+class BusinessTaxonomyTaxonomyTypesCapabilities(gapiStream):
+    """Define custom stream."""
+
+    name = "taxonomy_types_capabilities"
+    path = "/business/taxonomy/types/capabilities"
+    primary_keys: t.ClassVar[list[str]] = ["enterpriseId"]
+    replication_key = None
+    schema = th.PropertiesList(
+        th.Property("enterpriseId", th.StringType),
+        th.Property("name", th.StringType),
+        th.Property("isActive", th.BooleanType),
+        th.Property("parentId", th.StringType),
+        th.Property("levelNumber", th.IntegerType),
+        th.Property("levelLabel", th.StringType),
+        th.Property("maturity", th.StringType),
+        th.Property("isRecruitingEligible", th.BooleanType),
+        th.Property("isPeopleEligible", th.BooleanType),
+        th.Property("isSalesEligible", th.BooleanType),
+        th.Property("idL1", th.StringType),
+        th.Property("idL2", th.StringType),
+        th.Property("idL3", th.StringType),
+        th.Property("idL4", th.StringType),
+        th.Property("namePath", th.StringType),
+        th.Property("createdBy", th.StringType),
+        th.Property("createdOn", th.DateTimeType),
+        th.Property("modifiedBy", th.StringType),
+        th.Property("modifiedOn", th.DateTimeType),
+    ).to_dict()
+
+class BusinessTaxonomyTaxonomyTypesIndustriesStream(gapiStream):
+    """Define custom stream."""
+
+    name = "taxonomy_types_industries"
+    path = "/business/taxonomy/types/industries"
+    primary_keys: t.ClassVar[list[str]] = ["enterpriseId"]
+    replication_key = None
+    schema = th.PropertiesList(
+        th.Property("enterpriseId", th.StringType),
+        th.Property("name", th.StringType),
+        th.Property("isActive", th.BooleanType),
+        th.Property("parentId", th.StringType),
+        th.Property("levelNumber", th.IntegerType),
+        th.Property("levelLabel", th.StringType),
+        th.Property("isRecruitingEligible", th.BooleanType),
+        th.Property("isPeopleEligible", th.BooleanType),
+        th.Property("isSalesEligible", th.BooleanType),
+        th.Property("idL1", th.StringType),
+        th.Property("idL2", th.StringType),
+        th.Property("idL3", th.StringType),
+        th.Property("idL4", th.StringType),
+        th.Property("namePath", th.StringType),
+        th.Property("createdBy", th.StringType),
+        th.Property("createdOn", th.DateTimeType),
+        th.Property("modifiedBy", th.StringType),
+        th.Property("modifiedOn", th.DateTimeType),
+    ).to_dict()
+
+class BusinessTaxonomyTaxonomyTypesCustomerOutcomesStream(gapiStream):
+    """Define custom stream."""
+
+    name = "taxonomy_types_customer_outcomes"
+    path = "/business/taxonomy/types/customer-outcomes"
+    primary_keys: t.ClassVar[list[str]] = ["enterpriseId"]
+    replication_key = None
+    schema = th.PropertiesList(
+        th.Property("enterpriseId", th.StringType),
+        th.Property("name", th.StringType),
+        th.Property("isActive", th.BooleanType),
+        th.Property("parentId", th.StringType),
+        th.Property("levelNumber", th.IntegerType),
+        th.Property("levelLabel", th.StringType),
+        th.Property("isRecruitingEligible", th.BooleanType),
+        th.Property("isPeopleEligible", th.BooleanType),
+        th.Property("isSalesEligible", th.BooleanType),
+        th.Property("idL1", th.StringType),
+        th.Property("idL2", th.StringType),
+        th.Property("idL3", th.StringType),
+        th.Property("idL4", th.StringType),
+        th.Property("namePath", th.StringType),
+        th.Property("createdBy", th.StringType),
+        th.Property("createdOn", th.DateTimeType),
+        th.Property("modifiedBy", th.StringType),
+        th.Property("modifiedOn", th.DateTimeType),
+    ).to_dict()
+
+class BusinessTaxonomyTaxonomyTypesGoToMarketStream(gapiStream):
+    """Define custom stream."""
+
+    name = "taxonomy_types_go_to_market"
+    path = "/business/taxonomy/types/go-to-market"
+    primary_keys: t.ClassVar[list[str]] = ["enterpriseId"]
+    replication_key = None
+    schema = th.PropertiesList(
+        th.Property("enterpriseId", th.StringType),
+        th.Property("name", th.StringType),
+        th.Property("isActive", th.BooleanType),
+        th.Property("parentId", th.StringType),
+        th.Property("levelNumber", th.IntegerType),
+        th.Property("levelLabel", th.StringType),
+        th.Property("isRecruitingEligible", th.BooleanType),
+        th.Property("isPeopleEligible", th.BooleanType),
+        th.Property("isSalesEligible", th.BooleanType),
+        th.Property("idL1", th.StringType),
+        th.Property("idL2", th.StringType),
+        th.Property("idL3", th.StringType),
+        th.Property("idL4", th.StringType),
+        th.Property("namePath", th.StringType),
+        th.Property("createdBy", th.StringType),
+        th.Property("createdOn", th.DateTimeType),
+        th.Property("modifiedBy", th.StringType),
+        th.Property("modifiedOn", th.DateTimeType),
+    ).to_dict()
+
