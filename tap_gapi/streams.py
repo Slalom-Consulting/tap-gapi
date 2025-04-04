@@ -407,3 +407,32 @@ class BusinessTaxonomyTaxonomyTypesGoToMarketStream(gapiStream):
         th.Property("modifiedOn", th.DateTimeType),
     ).to_dict()
 
+class BusinessTaxonomyTaxonomyTypesSlalomGeographyStream(gapiStream):
+    """Define stream for Slalom Geography taxonomy."""
+
+    name = "taxonomy_types_slalom_geography"
+    path = "/business/taxonomy/types/slalom-geography"
+    primary_keys: t.ClassVar[list[str]] = ["enterpriseId"]
+    replication_key = None
+    schema = th.PropertiesList(
+        th.Property("enterpriseId", th.StringType),
+        th.Property("name", th.StringType),
+        th.Property("nameShort", th.StringType),
+        th.Property("parentId", th.StringType),
+        th.Property("isActive", th.BooleanType),
+        th.Property("isRecruitingEligible", th.BooleanType),
+        th.Property("isSalesEligible", th.BooleanType),
+        th.Property("isNearestLocationEligible", th.BooleanType),
+        th.Property("levelNumber", th.IntegerType),
+        th.Property("levelLabel", th.StringType),
+        th.Property("namePath", th.StringType),
+        th.Property("idL1", th.StringType),
+        th.Property("idL2", th.StringType),
+        th.Property("idL3", th.StringType),
+        th.Property("idL4", th.StringType),
+        th.Property("idL5", th.StringType),
+        th.Property("idL6", th.StringType),
+        th.Property("idL7", th.StringType),
+        th.Property("idL8", th.StringType),
+    ).to_dict()
+

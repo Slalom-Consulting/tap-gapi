@@ -79,6 +79,7 @@ class Tapgapi(Tap):
             streams.BusinessTaxonomyTaxonomyTypesIndustriesStream(self),
             streams.BusinessTaxonomyTaxonomyTypesCustomerOutcomesStream(self),
             streams.BusinessTaxonomyTaxonomyTypesGoToMarketStream(self),
+            streams.BusinessTaxonomyTaxonomyTypesSlalomGeographyStream(self),
             ]
         else:
             selected_streams = []
