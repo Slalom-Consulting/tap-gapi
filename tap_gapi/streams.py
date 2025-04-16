@@ -41,6 +41,11 @@ class FinanceCOACostCenterStream(gapiStream):
         th.Property("effectiveEndDate", th.StringType),
         th.Property("creationDate", th.StringType),
         th.Property("lastUpdateDate", th.StringType),
+        th.Property("functionId", th.StringType),
+        th.Property("gtmMarketId", th.StringType),
+        th.Property("gtmMarketName", th.StringType),
+        th.Property("gtmCountryRegionId", th.StringType),
+        th.Property("gtmCountryRegionName", th.StringType),
     ).to_dict()
 
 class FinanceCOAFunctionStream(gapiStream):
@@ -65,6 +70,9 @@ class FinanceCOAFunctionStream(gapiStream):
         th.Property("effectiveEndDate", th.StringType),
         th.Property("creationDate", th.StringType),
         th.Property("lastUpdateDate", th.StringType),
+        th.Property("utilizationEligible", th.BooleanType),
+        th.Property("peopleAlignmentType", th.StringType),
+        th.Property("workforceTaxonomyId", th.StringType),
     ).to_dict()
 
 class FinanceCOAGeographyStream(gapiStream):
@@ -114,6 +122,7 @@ class FinanceCOALegalEntityStream(gapiStream):
         th.Property("effectiveEndDate", th.StringType),
         th.Property("creationDate", th.StringType),
         th.Property("lastUpdateDate", th.StringType),
+        th.Property("operationalStatus", th.StringType)
     ).to_dict()
 
 class FinanceCOAOrganizationStream(gapiStream):
@@ -137,6 +146,7 @@ class FinanceCOAOrganizationStream(gapiStream):
         th.Property("organizationHierarchyLevel", th.StringType),
         th.Property("organizationFunctionProfile", th.StringType),
         th.Property("organizationType", th.StringType),
+        th.Property("organizationType2", th.StringType),
         th.Property("organizationParentId", th.StringType),
         th.Property("peopleEligibleFlag", th.BooleanType),
         th.Property("postingAllowedFlag", th.BooleanType),
