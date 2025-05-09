@@ -314,6 +314,7 @@ class BusinessTaxonomyTaxonomyTypesCapabilities(gapiStream):
     schema = th.PropertiesList(
         th.Property("enterpriseId", th.StringType),
         th.Property("name", th.StringType),
+        th.Property("nameShort", th.StringType),
         th.Property("isActive", th.BooleanType),
         th.Property("parentId", th.StringType),
         th.Property("levelNumber", th.IntegerType),
@@ -322,6 +323,8 @@ class BusinessTaxonomyTaxonomyTypesCapabilities(gapiStream):
         th.Property("isRecruitingEligible", th.BooleanType),
         th.Property("isPeopleEligible", th.BooleanType),
         th.Property("isSalesEligible", th.BooleanType),
+        th.Property("isMajorEligible", th.BooleanType),
+        th.Property("isMinorEligible", th.BooleanType),
         th.Property("idL1", th.StringType),
         th.Property("idL2", th.StringType),
         th.Property("idL3", th.StringType),
@@ -350,6 +353,8 @@ class BusinessTaxonomyTaxonomyTypesIndustriesStream(gapiStream):
         th.Property("isRecruitingEligible", th.BooleanType),
         th.Property("isPeopleEligible", th.BooleanType),
         th.Property("isSalesEligible", th.BooleanType),
+        th.Property("isMajorEligible", th.BooleanType),
+        th.Property("isMinorEligible", th.BooleanType),
         th.Property("idL1", th.StringType),
         th.Property("idL2", th.StringType),
         th.Property("idL3", th.StringType),
@@ -378,6 +383,8 @@ class BusinessTaxonomyTaxonomyTypesCustomerOutcomesStream(gapiStream):
         th.Property("isRecruitingEligible", th.BooleanType),
         th.Property("isPeopleEligible", th.BooleanType),
         th.Property("isSalesEligible", th.BooleanType),
+        th.Property("isMajorEligible", th.BooleanType),
+        th.Property("isMinorEligible", th.BooleanType),
         th.Property("idL1", th.StringType),
         th.Property("idL2", th.StringType),
         th.Property("idL3", th.StringType),
@@ -406,6 +413,8 @@ class BusinessTaxonomyTaxonomyTypesGoToMarketStream(gapiStream):
         th.Property("isRecruitingEligible", th.BooleanType),
         th.Property("isPeopleEligible", th.BooleanType),
         th.Property("isSalesEligible", th.BooleanType),
+        th.Property("isMajorEligible", th.BooleanType),
+        th.Property("isMinorEligible", th.BooleanType),
         th.Property("idL1", th.StringType),
         th.Property("idL2", th.StringType),
         th.Property("idL3", th.StringType),
@@ -444,5 +453,46 @@ class BusinessTaxonomyTaxonomyTypesSlalomGeographyStream(gapiStream):
         th.Property("idL6", th.StringType),
         th.Property("idL7", th.StringType),
         th.Property("idL8", th.StringType),
+        th.Property("isMetro", th.BooleanType),
+        th.Property("isGeoFocusEligible", th.BooleanType),
+        th.Property("hasSalesEligibleChildren", th.BooleanType),
+        th.Property("createdBy", th.StringType),
+        th.Property("createdOn", th.DateTimeType),
+        th.Property("modifiedBy", th.StringType),
+        th.Property("modifiedOn", th.DateTimeType),
+    ).to_dict()
+
+class BusinessTaxonomyLocationsStream(gapiStream):
+    """Define stream for Business Taxonomy Locations."""
+
+    name = "locations"
+    path = "/business/taxonomy/locations"
+    primary_keys: t.ClassVar[list[str]] = ["enterpriseId"]
+    replication_key = None
+    schema = th.PropertiesList(
+        th.Property("enterpriseId", th.StringType),
+        th.Property("name", th.StringType),
+        th.Property("isActive", th.BooleanType),
+        th.Property("isMetro", th.BooleanType),
+        th.Property("isPeopleEligible", th.BooleanType),
+        th.Property("locale", th.StringType),
+        th.Property("timezone", th.StringType),
+        th.Property("countryIsoAlpha2", th.StringType),
+        th.Property("countryIsoAlpha3", th.StringType),
+        th.Property("country", th.StringType),
+        th.Property("city", th.StringType),
+        th.Property("localArea", th.StringType),
+        th.Property("stateProvinceCode", th.StringType),
+        th.Property("stateProvince", th.StringType),
+        th.Property("addressLine1", th.StringType),
+        th.Property("addressLine2", th.StringType),
+        th.Property("postalCode", th.StringType),
+        th.Property("phone", th.StringType),
+        th.Property("latitude", th.NumberType),
+        th.Property("longitude", th.NumberType),
+        th.Property("modifiedBy", th.StringType),
+        th.Property("modifiedOn", th.DateTimeType),
+        th.Property("createdOn", th.DateTimeType),
+        th.Property("createdBy", th.StringType),
     ).to_dict()
 
