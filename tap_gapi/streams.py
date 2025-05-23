@@ -446,6 +446,7 @@ class BusinessTaxonomyTaxonomyTypesSlalomGeographyStream(gapiStream):
         th.Property("parentId", th.StringType),
         th.Property("isActive", th.BooleanType),
         th.Property("isRecruitingEligible", th.BooleanType),
+        th.Property("isPeopleEligible", th.BooleanType),
         th.Property("isSalesEligible", th.BooleanType),
         th.Property("isNearestLocationEligible", th.BooleanType),
         th.Property("levelNumber", th.IntegerType),
