@@ -532,3 +532,35 @@ class BusinessTaxonomyTaxonomyTypesSGAStream(gapiStream):
         th.Property("modifiedOn", th.DateTimeType),
     ).to_dict()
 
+class BusinessTaxonomyTaxonomyTypesCustomersStream(gapiStream):
+    """Define stream for Business Taxonomy Customers."""
+
+    name = "taxonomy_types_customers"
+    path = "/business/taxonomy/types/customers"
+    primary_keys: t.ClassVar[list[str]] = ["enterpriseId"]
+    replication_key = None
+    schema = th.PropertiesList(
+        th.Property("enterpriseId", th.StringType),
+        th.Property("name", th.StringType),
+        th.Property("isActive", th.BooleanType),
+        th.Property("parentId", th.StringType),
+        th.Property("levelNumber", th.IntegerType),
+        th.Property("levelLabel", th.StringType),
+        th.Property("isRecruitingEligible", th.BooleanType),
+        th.Property("isPeopleEligible", th.BooleanType),
+        th.Property("isSalesEligible", th.BooleanType),
+        th.Property("isMajorEligible", th.BooleanType),
+        th.Property("isMinorEligible", th.BooleanType),
+        th.Property("idL1", th.StringType),
+        th.Property("idL2", th.StringType),
+        th.Property("idL3", th.StringType),
+        th.Property("idL4", th.StringType),
+        th.Property("namePath", th.StringType),
+        th.Property("createdBy", th.StringType),
+        th.Property("createdOn", th.DateTimeType),
+        th.Property("modifiedBy", th.StringType),
+        th.Property("modifiedOn", th.DateTimeType),
+        th.Property("enterpriseCustomerId", th.StringType),
+        th.Property("hasMajorEligibleChildren", th.BooleanType),
+        th.Property("hasMinorEligibleChildren", th.BooleanType),
+    ).to_dict()
