@@ -7,7 +7,7 @@ import typing as t
 
 from singer_sdk import typing as th  # JSON Schema typing helpers
 
-from tap_gapi.client import gapiStream
+from tap_gapi.client import gapiStream, paginatedGapiStream
 
 if sys.version_info >= (3, 9):
     import importlib.resources as importlib_resources
@@ -17,7 +17,7 @@ else:
 """
 GAPI FINANACE COA STREAMS
 """
-class FinanceCOACostCenterStream(gapiStream):
+class FinanceCOACostCenterStream(paginatedGapiStream):
     """Define custom stream."""
 
     name = "costcenter"
