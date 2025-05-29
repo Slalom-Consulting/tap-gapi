@@ -94,6 +94,7 @@ class FinanceCOAGeographyStream(gapiStream):
         th.Property("effectiveEndDate", th.StringType),
         th.Property("creationDate", th.StringType),
         th.Property("lastUpdateDate", th.StringType),
+        th.Property("slalomGeoTaxonomyID", th.StringType)
     ).to_dict()
 
 class FinanceCOALegalEntityStream(gapiStream):
