@@ -463,6 +463,7 @@ class BusinessTaxonomyTaxonomyTypesSlalomGeographyStream(gapiStream):
         th.Property("idL8", th.StringType),
         th.Property("isMetro", th.BooleanType),
         th.Property("isGeoFocusEligible", th.BooleanType),
+        th.Property("isOfficeAffiliation", th.BooleanType),
         th.Property("hasSalesEligibleChildren", th.BooleanType),
         th.Property("createdBy", th.StringType),
         th.Property("createdOn", th.DateTimeType),
